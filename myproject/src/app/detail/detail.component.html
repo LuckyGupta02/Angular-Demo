@@ -1,0 +1,22 @@
+<nz-page-header class="site-page-header" nzTitle="Details">
+    <nz-breadcrumb nz-page-header-breadcrumb>
+      <nz-breadcrumb-item routerLink=''><i nz-icon [nzType]="'home'"></i></nz-breadcrumb-item>
+      <nz-breadcrumb-item>Users</nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a routerLink="/users">Users</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item *ngIf="user">{{user.id}}</nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </nz-page-header>
+
+<button class="btn" routerLink="/userCreate" nz-button nzType="primary">+ Create</button>&nbsp;
+<button nz-button nzType="primary" *ngIf="user" (click)="updateUser(user)">Update</button>
+<br />
+<br />
+<nz-descriptions *ngIf="user" nzBordered>      
+    <nz-descriptions-item nzTitle="Id" [nzSpan]="3">{{user.id}}</nz-descriptions-item><br />
+    <nz-descriptions-item nzTitle="Email" [nzSpan]="3">{{user.email}}</nz-descriptions-item><br />
+    <nz-descriptions-item nzTitle="Name" [nzSpan]="3">{{user.name}}</nz-descriptions-item><br />
+    <nz-descriptions-item nzTitle="Created At" [nzSpan]="3">YES</nz-descriptions-item><br />
+    <nz-descriptions-item nzTitle="Updated At" [nzSpan]="3">YES</nz-descriptions-item><br />
+</nz-descriptions>

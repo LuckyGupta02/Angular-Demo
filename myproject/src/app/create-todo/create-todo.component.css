@@ -1,0 +1,11 @@
+.select{
+    width: 150px;
+  }
+
+  [nz-form]:not(.ant-form-inline):not(.ant-form-vertical) {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    height: auto;
+  }
+

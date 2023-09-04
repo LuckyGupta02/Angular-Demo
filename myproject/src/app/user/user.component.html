@@ -1,0 +1,56 @@
+<!-- Page header -->
+<nz-page-header class="site-page-header" nzTitle="Users">
+  <nz-breadcrumb nz-page-header-breadcrumb>
+    <nz-breadcrumb-item  routerLink=''><i nz-icon [nzType]="'home'"></i></nz-breadcrumb-item>
+    <nz-breadcrumb-item>Users</nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a routerLink="/users">Users</a>
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
+</nz-page-header>
+
+<!-- search user -->
+<nz-input-group class="search" [nzSuffix]="suffixTemplate" nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+  <input type="text" nz-input [(ngModel)]="search" placeholder="search user" />
+</nz-input-group>
+<ng-template #suffixTemplate>
+  <i nz-icon  nzType="close" nzTheme="outline" (click)="reset()"></i>
+</ng-template>
+<ng-template #suffixButton>
+  <button nz-button nzType="primary" (click)="searchUser()" nzSize="small" nzSearch>Search</button>
+</ng-template>
+<br />
+
+<!-- create user -->
+<button class="btn" nz-button nzType="primary" routerLink="/userCreate"> + Create User</button>
+<br />
+<br />
+
+<!-- Display users table -->
+<nz-table nzTableLayout="fixed" [nzData]="users">
+  <thead>
+    <tr>
+      <th *ngFor="let column of listOfColumn">
+        {{ column.title }}
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">  
+      <td>{{user.id}} </td>
+      <td (click)="onSelect(user)">{{ user.email }}</td>
+      <td>{{ user.name }}</td>
+      <td>
+        <button nz-button nz-dropdown [nzDropdownMenu]="menu4">
+          Actions
+          <span nz-icon nzType="down"></span>
+        </button>
+        <nz-dropdown-menu #menu4="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item (click)="updateUser(user)">Update</li>
+            <li nz-menu-item (click)="deleteUser(user.id)">Delete</li>
+          </ul>
+        </nz-dropdown-menu>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

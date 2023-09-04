@@ -1,0 +1,36 @@
+<nz-page-header class="site-page-header" nzTitle="Create Todo">
+    <nz-breadcrumb nz-page-header-breadcrumb>
+      <nz-breadcrumb-item  routerLink=''><i nz-icon [nzType]="'home'"></i></nz-breadcrumb-item>
+      <nz-breadcrumb-item>Todos</nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        <a routerLink="/todos">Todos</a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item >Create</nz-breadcrumb-item>
+    </nz-breadcrumb>
+  </nz-page-header>
+
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+        <nz-form-label>Title</nz-form-label>
+        <nz-form-control nzErrorTip="Please enter title">
+            <input nz-input formControlName="title" placeholder="title" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label>Description</nz-form-label>
+        <nz-form-control nzErrorTip="Please enter description">
+            <input nz-input formControlName="description" placeholder="description" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label>Assign To</nz-form-label>
+        <nz-select formControlName="assignedTo" class="select" nzShowSearch>
+            <nz-option *ngFor="let user of users" [nzLabel]="user.name" [nzValue]="user.id"></nz-option>
+        </nz-select>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control>
+            <button nz-button nzType="primary">Create</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>

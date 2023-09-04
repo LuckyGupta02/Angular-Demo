@@ -1,0 +1,40 @@
+<nz-page-header class="site-page-header" nzTitle="Create User">
+  <nz-breadcrumb nz-page-header-breadcrumb>
+    <nz-breadcrumb-item routerLink=''><i nz-icon [nzType]="'home'"></i></nz-breadcrumb-item>
+    <nz-breadcrumb-item>Users</nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a routerLink="/users">Users</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>{{this.user.id}}</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</nz-page-header>
+
+<form
+nz-form
+[formGroup]="validateForm"
+(ngSubmit)="submitForm()"
+>
+<!-- <nz-form-item>
+  <nz-form-label >Id</nz-form-label>
+  <nz-form-control  nzErrorTip="Please enter id">
+    <input nz-input [disabled]="true" formControlName="id"  />
+  </nz-form-control>
+</nz-form-item> -->
+<nz-form-item>
+    <nz-form-label >Email</nz-form-label>
+    <nz-form-control  nzErrorTip="Please enter email">
+      <input nz-input formControlName="email"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label >Name</nz-form-label>
+    <nz-form-control nzErrorTip="Please enter name">
+      <input nz-input formControlName="name" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control >
+      <button nz-button nzType="primary" >Save</button>
+    </nz-form-control>
+  </nz-form-item>
+  </form>

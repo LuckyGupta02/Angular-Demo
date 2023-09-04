@@ -1,0 +1,27 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo">
+      <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"></i>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''"
+        nzSelected>
+        <span routerLink=''>Dashboad</span>
+      </li>
+      <li nz-menu-item routerLink='/todos'>Todos</li>
+      <li nz-menu-item routerLink='/users'>Users</li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <img nz-image nzSrc="https://assets.aceonics.com/logos/ui/logo-full.svg" alt="loading.." />
+    </nz-header>
+    <nz-content>
+      <div class="inner-content" nzTheme="dark"> <router-outlet></router-outlet></div>
+    </nz-content>
+    <nz-footer>Angular design ©2023 Implement By Lucky</nz-footer>
+  </nz-layout>
+</nz-layout>
+
+

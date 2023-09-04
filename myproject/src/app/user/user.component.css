@@ -1,0 +1,18 @@
+[z-table]{
+    border: 1px;
+    text-align: right;
+}
+
+.btn{
+    text-align: right;
+    margin-left: 880px;
+}
+
+nz-button-group {
+    margin: 0 8px 8px 0;
+  }
+
+.search{
+    width: 350px;
+    margin-left: 300px;
+  }

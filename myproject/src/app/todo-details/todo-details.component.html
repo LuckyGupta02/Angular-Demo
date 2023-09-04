@@ -1,0 +1,17 @@
+<nz-page-header class="site-page-header" nzTitle="Details">
+  <nz-breadcrumb nz-page-header-breadcrumb>
+    <nz-breadcrumb-item routerLink=''><i nz-icon [nzType]="'home'"></i></nz-breadcrumb-item>
+    <nz-breadcrumb-item>Todos</nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      <a routerLink="/todos">Todos</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item *ngIf="todo">{{todo.id}}</nz-breadcrumb-item>
+  </nz-breadcrumb>
+</nz-page-header>
+
+<nz-descriptions *ngIf="todo" nzBordered>
+  <nz-descriptions-item nzTitle="Id" [nzSpan]="3">{{todo.id}}</nz-descriptions-item><br />
+  <nz-descriptions-item nzTitle="Title" [nzSpan]="3">{{todo.title}}</nz-descriptions-item><br />
+  <nz-descriptions-item nzTitle="Description" [nzSpan]="3">{{todo.description}}</nz-descriptions-item><br />
+  <nz-descriptions-item nzTitle="Assigned To" [nzSpan]="3">{{todo.assignedTo.name}}</nz-descriptions-item><br />
+</nz-descriptions>

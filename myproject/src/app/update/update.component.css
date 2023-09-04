@@ -1,0 +1,8 @@
+[nz-form]:not(.ant-form-inline):not(.ant-form-vertical) {
+    max-width: 400px;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 200px;
+    text-align: center;
+    
+  }
